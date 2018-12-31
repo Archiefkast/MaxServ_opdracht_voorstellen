@@ -31,24 +31,16 @@
 
 <body>
 
+    <label for="navbar--show" class="navbar--show">&#9776; Menu</label>
+    <input type="checkbox" id="navbar--show" role="button">
+
     <!-- Navigation -->
-    <a class="menu-toggle rounded menu__btn-toggle" href="#">
-        <i class="fa fa-bars" id="menu-icon"></i>
-    </a>
-    <nav id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-nav-item">
-                <a href="#section__page-top">Start</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a href="#section__about1">Wie ben ik?</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a href="#section__hobbies">Mijn hobbies</a>
-            </li>
-            <li class="sidebar-nav-item">
-                <a href="#section__contact">Contact</a>
-            </li>
+    <nav class="navbar" role="navigation">
+        <ul id="navmenu">
+            <li class="navmenu__item"><a class="navmenu__link" href="#section__page-top">Home</a></li>
+            <li class="navmenu__item"><a class="navmenu__link" href="#section__about1">Wie ben ik?</a></li>
+            <li class="navmenu__item"><a class="navmenu__link" href="#section__hobbies">Mijn hobbies</a></li>
+            <li class="navmenu__item"><a class="navmenu__link" href="#section__contact">Contact</a></li>
         </ul>
     </nav>
 

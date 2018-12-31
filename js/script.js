@@ -1,15 +1,17 @@
 // Use strict mode for better error report
 "use strict";
 
+$(document).ready(function () {
+
   // Store the youtube video url in a variable when a modal has been closed
-  $(function(){
+  $(function () {
     $('.modal').on('hidden.bs.modal', function (e) {
       var videoPlayer = $(this).find("iframe");
       videoPlayer.attr("src", videoPlayer.attr("src"));
 
       // Pause the audioplayer when a modal has been closed
       var audioPlayer = $(this).find("audio")[0];
-      if($(this).find("audio").length > 0) {
+      if ($(this).find("audio").length > 0) {
         audioPlayer.pause();
       }
     });
@@ -24,15 +26,8 @@
     }
   });
 
-// Open / close the side bar by clicking the menu button and change the menu button's icon
-$(".menu-toggle").click(function (e) {
-  e.preventDefault();
-  $("#menu-icon").toggleClass("fa-bars fa-times");
-  $("#sidebar-wrapper").toggleClass("active");
-});
+  $(".navmenu__item").click(function () {
+    $("#navbar--show").prop( "checked", false );
+  });  
 
-// close the side bar by clicking a menu item
-$('.sidebar-nav-item a').click(function () {
-  $("#menu-icon ").toggleClass("fa-bars fa-times");
-  $("#sidebar-wrapper").removeClass("active");
 });
