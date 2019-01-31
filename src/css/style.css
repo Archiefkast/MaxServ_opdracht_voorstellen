@@ -20,9 +20,13 @@ h6 {
   z-index: 999;
   background-color: black;
   width: 100vw;
-  user-select: none; }
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border-bottom: 0.1rem solid gray; }
 
-.navbar--show {
+.btn__navmenu {
   z-index: 9999;
   position: fixed;
   top: 0;
@@ -33,10 +37,14 @@ h6 {
   color: #fff;
   background: black;
   display: none;
-  user-select: none; }
-
-.navbar--show:hover {
-  background-color: #343a40; }
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border: none;
+  border-bottom: 0.1rem solid gray; }
+  .btn__navmenu:focus {
+    outline: none; }
 
 #navmenu {
   margin: 0 auto;
@@ -46,23 +54,15 @@ h6 {
 
 .navmenu__item {
   padding: 0.5rem 2rem 0.5rem 2rem; }
+  .navmenu__item:hover {
+    background-color: #343a40; }
 
 .navmenu__link {
   color: white;
   display: block; }
-
-.navmenu__link:hover {
-  text-decoration: none;
-  color: white; }
-
-.navmenu__item:hover {
-  background-color: #343a40; }
-
-#navbar--show {
-  display: none; }
-
-#navbar--show:checked ~ .navbar {
-  display: block; }
+  .navmenu__link:hover {
+    text-decoration: none;
+    color: white; }
 
 .masthead {
   min-height: 100vh;
@@ -91,7 +91,8 @@ h6 {
   background: rgba(0, 0, 0, 0.2);
   color: #fff;
   position: absolute;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   bottom: 1rem;
   font-size: 2.5rem; }
   #masthead__btn-down:hover {
@@ -226,40 +227,56 @@ footer {
   body,
   html {
     font-size: 0.8rem; }
+
   .navbar {
-    z-index: 9999;
     position: fixed;
     top: 3rem;
     display: none; }
+
   .navbar--show {
+    display: block; }
+
+  .btn__navmenu {
     display: flex;
     justify-content: center;
     align-items: center; }
+
   #navmenu {
-    display: block;
     width: 100%;
-    text-align: center; }
+    text-align: center;
+    display: block; }
+
   #masthead__label-heading {
     font-size: 4rem; }
+
   .table-about {
     width: 75vw; } }
-
 @media (min-width: 768px) {
   #masthead__label-heading {
     font-size: 5rem; }
+
   .portfolio-item:hover .portfolio-item__img {
-    clip-path: inset(1rem); }
+    -webkit-clip-path: inset(1rem);
+            clip-path: inset(1rem); }
   .portfolio-item:hover .portfolio-item__caption {
     background-color: rgba(29, 128, 159, 0.6);
-    clip-path: inset(1rem); }
+    -webkit-clip-path: inset(1rem);
+            clip-path: inset(1rem); }
   .portfolio-item .portfolio-item__img {
+    transition: -webkit-clip-path 0.25s ease-out;
     transition: clip-path 0.25s ease-out;
-    clip-path: inset(-1px); }
+    transition: clip-path 0.25s ease-out, -webkit-clip-path 0.25s ease-out;
+    -webkit-clip-path: inset(-1px);
+            clip-path: inset(-1px); }
   .portfolio-item .portfolio-item__caption {
+    transition: background-color 0.7s, -webkit-clip-path 0.25s ease-out;
     transition: clip-path 0.25s ease-out, background-color 0.7s;
-    clip-path: inset(0px); }
+    transition: clip-path 0.25s ease-out, background-color 0.7s, -webkit-clip-path 0.25s ease-out;
+    -webkit-clip-path: inset(0px);
+            clip-path: inset(0px); }
     .portfolio-item .portfolio-item__caption .portfolio-item__caption-content {
       transition: opacity 0.25s;
       margin: auto auto 3rem 3rem; }
+
   .table-about {
     width: 50vw; } }

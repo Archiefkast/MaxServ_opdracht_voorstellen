@@ -5,7 +5,7 @@ $(document).ready(function () {
 
   // Store the youtube video url in a variable when a modal has been closed
   $(function () {
-    $('.modal').on('hidden.bs.modal', function (e) {
+    $(".modal").on("hidden.bs.modal", function (e) {
       var videoPlayer = $(this).find("iframe");
       videoPlayer.attr("src", videoPlayer.attr("src"));
 
@@ -26,8 +26,12 @@ $(document).ready(function () {
     }
   });
 
-  $(".navmenu__item").click(function () {
-    $("#navbar--show").prop( "checked", false );
-  });  
+  $("#btn__navmenu--toggle").on('click', function () {
+    $(".navbar").toggleClass("navbar--show");
+  });
+
+  $(".navmenu__item").on('click', function () {
+    $(".navbar").removeClass("navbar--show");
+  });
 
 });
